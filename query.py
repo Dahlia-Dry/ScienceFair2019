@@ -18,17 +18,14 @@ class Query(object):
             metallicity = stellar metallicity (base-10 logarithm of the Fe to H ratio at the surface of the star,
                                                 normalized by the solar Fe to H ratio)
             period = orbital period of planet (days)
-            mag = kepler-band magnitude of star
+            vismag = optical magnitude of star
+            irmag = infrared magnitude of star
             semi-major axis = a, in AU
             eccentricity = e
             age = age of star (Gyr)
             luminosity = stellar luminosity (log10(Solar Luminosity))
             spectrum = spectral type"""
         self.vars = vars
-        self.composite_params = ["fpl_hostname", "fpl_letter", "fpl_name", "fpl_discmethod", "fpl_orbper", "fpl_smax", "fpl_eccen",
-                                 "fpl_bmasse", "fpl_bmassprov", "fpl_rade", "fpl_dens", "fpl_eqt", "fpl_insol", "fst_dist",
-                                 "fst_optmag", "fst_optmagband", "fst_nirmag", "fst_nirmagband", "fst_spt", "fst_teff", "fst_logg",
-                                 "fst_lum","fst_mass", "fst_rad", "fst_met", "fst_metratio", "fst_age"]
         self.checkvalid = checkvalid
 
     def start(self):
@@ -80,23 +77,64 @@ class Query(object):
             print("whoops")
 
     def convert_vars(self):
-        compindices = []
+        columns = []
         for i in self.vars:
             if i == "m_star":
-                compindices.append()
+                columns.append("fst_mass")
+            elif i== "r_star":
+                columns.append("fst_rad")
+            elif i == "m_planet":
+                columns.append("fpl_bmasse")
+            elif i == "r_planet":
+                columns.append("fpl_rade")
+            elif i == "d_planet":
+                columns.append("fpl_dens")
+            elif i == "n_planets":
+                columns.append("") ####
+            elif i == "eff_temp_star":
+                columns.append("fst_teff")
+            elif i == "metallicity":
+                columns.append("fst_met")
+            elif i == "period":
+                columns.append("fpl_orbper")
+            elif i == "vismag":
+                columns.append("fst_optmag")
+            elif i == "irmag":
+                columns.append("fst_nirmag")
+            elif i == "semi-major axis":
+                columns.append("fpl_smax")
+            elif i == "eccentricity":
+                columns.append("fpl_eccen")
+            elif i == "age":
+                columns.append("fst_age")
+            elif i == "luminosity":
+                columns.append("fst_lum")
+            elif i == "spectrum":
+                columns.append("fst_spt")
+            else:
+                print("sorry")
+        return(columns)
 
-
-    def get_valid_indices(self): #for given vars, find distinct columns with complete data
+    def get_valid_indices(self, columns): #for given vars, find distinct columns with complete data
         stardata, planetdata, koimaster, compdata = self.start()
-        for i in range(len(self.vars)):
-            for j in range(len(compdata["fpl_hostname"])):
-
-
-
+        good = True
+        for i in range(len(compdata["fpl_hostname"])):
+            for col in columns:
+                if str(compddata[col].iloc[i]) == 'nan':
+                    good = False
+            if good:
+                indices.append(i)
+            good = True
+        return indices
 
     def get_stars_nearby(self, indices): #indices returned from get_valid_indices function
+        return "wip"
 
     def get_m_star(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        m_star = []
+        for i in indices:
+            m_star.append(compdata[])
 
     def get_r_star(self, indices):
 
@@ -114,7 +152,9 @@ class Query(object):
 
     def get_period(self, indices):
 
-    def get_mag(self, indices):
+    def get_vismag(self, indices):
+
+    def get_irmag(self, indices):
 
     def get_a(self, indices):
 
@@ -127,6 +167,47 @@ class Query(object):
     def get_spectrum(self, indices):
 
     def getResults(self):
+        stardata,planetdata,koimaster,compdata = self.start()
+        columns = self.convert_vars()
+        indices = self.get_valid_indices(columns)
+        data = []
+        for col in columns:
+            if col == "fst_mass":
+                data.append(self.get_m_star(indices))
+            elif col == "fst_rad":
+                data.append(self.get_r_star(indices))
+            elif col == "fpl_bmasse":
+                data.append(self.get_m_planet(indices))
+            elif col == "fpl_rade":
+                data.append(self.get_r_planet(indices))
+            elif col == "fpl_dens":
+                data.append(self.get_d_planet(indices))
+            elif col == "fst_teff":
+                data.append(self.get_eff_temp_star(indices))
+            elif col == "fst_met":
+                data.append(self.get_metallicity(indices))
+            elif col == "fpl_orbper":
+                data.append(self.get_period(indices))
+            elif col == "fst_optmag":
+                data.append(self.get_vismag(indices))
+            elif col == "fst_nirmag":
+                data.append(self.get_irmag(indices))
+            elif col == "fpl_smax":
+                data.append(self.get_a(indices))
+            elif col == "fpl_eccen":
+                data.append(self.get_e(indices))
+            elif col == "fst_age":
+                data.append(self.get_age(indices))
+            elif col == "fst_lum":
+                data.append(self.get_luminosity(indices))
+            elif col == "fst_spt":
+                data.append(self.get_spectrum(indices))
+            elif col == "":
+                print("wip")
+            else:
+                print("whoops")
+
+
 
 
 
