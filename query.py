@@ -118,9 +118,10 @@ class Query(object):
     def get_valid_indices(self, columns): #for given vars, find distinct columns with complete data
         stardata, planetdata, koimaster, compdata = self.start()
         good = True
+        indices = []
         for i in range(len(compdata["fpl_hostname"])):
             for col in columns:
-                if str(compddata[col].iloc[i]) == 'nan':
+                if str(compdata[col].iloc[i]) == 'nan':
                     good = False
             if good:
                 indices.append(i)
@@ -134,43 +135,118 @@ class Query(object):
         stardata, planetdata, koimaster, compdata = self.start()
         m_star = []
         for i in indices:
-            m_star.append(compdata[])
+            m_star.append(compdata["fst_mass"].iloc[i])
+        return m_star
 
     def get_r_star(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        r_star = []
+        for i in indices:
+            r_star.append(compdata["fst_rad"].iloc[i])
+        return r_star
 
     def get_m_planet(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fpl_bmasse"].iloc[i])
+        return data
 
     def get_r_planet(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fpl_rade"].iloc[i])
+        return data
 
     def get_d_planet(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fpl_dens"].iloc[i])
+        return data
 
     def get_n_planets(self, indices):
+        return "wip"
 
     def get_eff_temp_star(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fst_teff"].iloc[i])
+        return data
 
     def get_metallicity(self, indices): #check only Fe/H ratio
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fst_met"].iloc[i])
+        print(data[:5])
+        return data
 
     def get_period(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fpl_orbper"].iloc[i])
+        return data
 
     def get_vismag(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fst_optmag"].iloc[i])
+        return data
 
     def get_irmag(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fst_nirmag"].iloc[i])
+        return data
 
     def get_a(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fpl_smax"].iloc[i])
+        return data
 
     def get_e(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fpl_eccen"].iloc[i])
+        return data
 
     def get_age(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fst_age"].iloc[i])
+        return data
 
     def get_luminosity(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fst_lum"].iloc[i])
+        return data
 
     def get_spectrum(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(compdata["fst_spt"].iloc[i])
+        return data
 
     def getResults(self):
         stardata,planetdata,koimaster,compdata = self.start()
         columns = self.convert_vars()
         indices = self.get_valid_indices(columns)
         data = []
+        coordinates = []
+        coord = []
         for col in columns:
             if col == "fst_mass":
                 data.append(self.get_m_star(indices))
@@ -206,17 +282,15 @@ class Query(object):
                 print("wip")
             else:
                 print("whoops")
+        for i in range(len(data[0])):
+            coord = []
+            for j in range(len(data)):
+                coord.append(data[j][i])
+            coordinates.append(coord)
+        return coordinates
 
 
-
-
-
-
-
-query = Query(["metallicity, eff_temp"])
-indices = query.get_matchIndex("planet", 67)
-planetdata,stardata, koimaster= query.start()
-print(indices)
-print(planetdata["mst_mass"].iloc[indices[0]])
-print(stardata["mass"].iloc[indices[1]])
+query = Query(["semi-major axis", "eccentricity", "m_planet"])
+coordinates = query.getResults()
+print(len(coordinates))
 
