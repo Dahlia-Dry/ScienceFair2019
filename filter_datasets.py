@@ -223,7 +223,22 @@ def compfilter(composite):
     composite.to_csv(savepath)
     print(len(composite["fpl_hostname"]))
 
-compfilter(composite)
+def trim_stardata(stardata):
+    badindices = []
+    for i in range(len(stardata["kepid"])):
+        if str(stardata["av"].iloc[i]) == "nan":
+            print("hi there")
+            badindices.append(i)
+        print(i)
 
+    stardata = stardata.drop(badindices)
+    stardata = stardata.reset_index(drop=True)
+    savepath = 'data/keplerstellar_betterMod.csv'
+    stardata.to_csv(savepath)
+    print(len(stardata["kepid"]))
+
+
+better_stardata = pd.read_csv("data/keplerstellar-better.csv")
+trim_stardata(better_stardata)
 
 

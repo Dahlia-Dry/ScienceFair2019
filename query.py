@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import os
 
-class Query(object):
+class QueryCandidates(object):
     def __init__(self, vars, checkvalid = False):
         """ Vars is an n-length string list of variables the user wishes to retrieve from the Kepler datasets.
             included variables:
@@ -38,7 +38,7 @@ class Query(object):
         stardata = pd.read_csv(loadpath2, sep=",")
         koimaster = pd.read_csv(loadpath3, sep=",")
         compdata = pd.read_csv(loadpath4, sep = ",")
-        return planetdata,stardata,koimaster, compdata
+        return stardata, planetdata, koimaster, compdata
 
     def get_matchIndex(self, type, i):
         planetdata,stardata,koimaster, compdata = self.start()
@@ -113,7 +113,7 @@ class Query(object):
                 columns.append("fst_spt")
             else:
                 print("sorry")
-        return(columns)
+        return columns
 
     def get_valid_indices(self, columns): #for given vars, find distinct columns with complete data
         stardata, planetdata, koimaster, compdata = self.start()
@@ -133,17 +133,17 @@ class Query(object):
 
     def get_m_star(self, indices):
         stardata, planetdata, koimaster, compdata = self.start()
-        m_star = []
+        data = []
         for i in indices:
-            m_star.append(compdata["fst_mass"].iloc[i])
-        return m_star
+            data.append(compdata["fst_mass"].iloc[i])
+        return data
 
     def get_r_star(self, indices):
         stardata, planetdata, koimaster, compdata = self.start()
-        r_star = []
+        data = []
         for i in indices:
-            r_star.append(compdata["fst_rad"].iloc[i])
-        return r_star
+            data.append(compdata["fst_rad"].iloc[i])
+        return data
 
     def get_m_planet(self, indices):
         stardata, planetdata, koimaster, compdata = self.start()
@@ -290,7 +290,199 @@ class Query(object):
         return coordinates
 
 
-query = Query(["semi-major axis", "eccentricity", "m_planet"])
-coordinates = query.getResults()
-print(len(coordinates))
+class QueryAll(object): #return dataframe of string planet/noplanet , stellar characteristics all from stardata db
+    def __init__(self, vars):
+        """ Vars is an n-length string list of variables the user wishes to retrieve from the Kepler datasets.
+                    included variables:
+                    ------------------
+                    stars_nearby = number of stars within 3 parsecs of target star
+                    m_star = mass of star (solar masses)
+                    r_star = radius of star (solar radii)
+                    d_star = density of star (g/cm^3)
+                    n_planets = number of planets in system
+                    eff_temp_star = photospheric temperature of star (K)
+                    metallicity = stellar metallicity (base-10 logarithm of the Fe to H ratio at the surface of the star,
+                                                        normalized by the solar Fe to H ratio)
+                    av_extinction = a measure of the absorption and scattering of light in the V-band due to dust and gas
+                        in the line of sight
+                    """
+        self.vars = vars
+
+    def convert_vars(self):
+        columns = []
+        for var in self.vars:
+            if var == "m_star":
+                columns.append("mass")
+            elif var == "r_star":
+                columns.append("radius")
+            elif var == "d_star":
+                columns.append("dens")
+            elif var == "n_planets":
+                columns.append("nkoi")
+            elif var == "eff_temp_star":
+                columns.append("teff")
+            elif var == "metallicity":
+                columns.append("feh")
+            elif var == "av_extinction":
+                columns.append("av")
+            else:
+                return "whoops"
+        return columns
+
+    def start(self):
+        loadpath1 = 'data/planetdatamod2.csv'
+        loadpath2 = 'data/keplerstellar_betterMod.csv'
+        loadpath3 = 'data/cumulative.csv'
+        loadpath4 = 'data/compositepars.csv'
+        planetdata = pd.read_csv(loadpath1, sep=",")
+        planetdata = planetdata.reset_index(drop=True)
+        stardata = pd.read_csv(loadpath2, sep=",")
+        koimaster = pd.read_csv(loadpath3, sep=",")
+        compdata = pd.read_csv(loadpath4, sep = ",")
+        return stardata, planetdata, koimaster, compdata
+
+    def get_valid_indices(self, columns, type): #for given vars, find distinct columns with complete data
+        stardata, planetdata, koimaster, compdata = self.start()
+        good = True
+        indices = []
+        print(columns)
+        if type == "planets":
+            for i in range(len(stardata["kepid"])):
+                print(i)
+                for col in columns:
+                    if str(stardata[col].iloc[i]) == 'nan' or stardata["nkoi"].iloc[i] == 0:
+                        good = False
+                if good:
+                    indices.append(i)
+                good = True
+        elif type == "noplanets":
+            for i in range(len(stardata["kepid"])):
+                print(i)
+                for col in columns:
+                    if str(stardata[col].iloc[i]) == 'nan' or stardata["nkoi"].iloc[i] != 0:
+                        good = False
+                if good:
+                    indices.append(i)
+                good = True
+        return indices
+
+    def get_m_star(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(stardata["mass"].iloc[i])
+        return data
+
+    def get_r_star(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(stardata["radius"].iloc[i])
+        return data
+
+    def get_d_star(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(stardata["dens"].iloc[i])
+        return data
+
+    def get_n_planets(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            print(i)
+            data.append(stardata["nkoi"].iloc[i])
+        return data
+
+    def get_eff_temp_star(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(stardata["teff"].iloc[i])
+        return data
+
+    def get_metallicity(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(stardata["feh"].iloc[i])
+        return data
+
+    def get_av_extinction(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            print(i)
+            data.append(stardata["av"].iloc[i])
+        return data
+
+    def getResults(self):
+        #status of 1 = planets, status of 0 = no planets
+        columns = self.convert_vars()
+        planet_indices = self.get_valid_indices(columns, type = "planets")
+        noplanet_indices = self.get_valid_indices(columns, type = "noplanets")
+        data = {'status': []}
+
+        for i in range(len(planet_indices)):
+            data['status'].append(1)
+
+        for col in columns:
+            if col == "mass":
+                data[col] = self.get_m_star(planet_indices)
+            elif col == "radius":
+                data[col] = self.get_r_star(planet_indices)
+            elif col == "dens":
+                data[col] = self.get_d_star(planet_indices)
+            elif col == "nkoi":
+                data[col] = self.get_n_planets(planet_indices)
+            elif col == "teff":
+                data[col] = self.get_eff_temp_star(planet_indices)
+            elif col == "feh":
+                data[col] = self.get_metallicity(planet_indices)
+            elif col == "av":
+                data[col] = self.get_av_extinction(planet_indices)
+            else:
+                print("whoops")
+
+        for i in range(len(noplanet_indices)):
+            data['status'].append(0)
+
+        arr = []
+        for col in columns:
+            if col == "mass":
+                arr = self.get_m_star(noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == "radius":
+                arr = self.get_r_star(noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == "dens":
+                arr = self.get_d_star(noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == "nkoi":
+                arr = self.get_n_planets(noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == "teff":
+                arr = self.get_eff_temp_star(noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == "feh":
+                arr = self.get_metallicity(noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == "av":
+                arr = self.get_av_extinction(noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            else:
+                print("whoops")
+        formatted_data = pd.DataFrame(data)
+        return formatted_data
+
+
+
+
+
+
+
+"""query = QueryAll(["n_planets", "av_extinction"])
+df = query.getResults()
+print(len(df))"""
 

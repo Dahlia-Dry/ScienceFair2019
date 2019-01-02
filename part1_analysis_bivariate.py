@@ -43,7 +43,7 @@ class Part1_Bivariate_Analysis(object):
         plt.show()
 
 
-query = Query(["r_star", "irmag"])
+query = QueryCandidates(["r_star", "irmag"])
 coordinates = query.getResults()
 scatterplot = Part1_Bivariate_Analysis(coordinates)
 scatterplot.scatterplot("Stellar Radius", "solar radii", "Near-Infrared Magnitude", "")
