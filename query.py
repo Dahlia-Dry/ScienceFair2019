@@ -291,7 +291,7 @@ class QueryCandidates(object):
 
 
 class QueryAll(object): #return dataframe of string planet/noplanet , stellar characteristics all from stardata db
-    def __init__(self, vars):
+    def __init__(self, vars, filter = False, equalize = False):
         """ Vars is an n-length string list of variables the user wishes to retrieve from the Kepler datasets.
                     included variables:
                     ------------------
@@ -305,8 +305,11 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                                                         normalized by the solar Fe to H ratio)
                     av_extinction = a measure of the absorption and scattering of light in the V-band due to dust and gas
                         in the line of sight
+            Filter is a boolean set to true in program building to randomly cut 50% of the data to make processing faster
                     """
         self.vars = vars
+        self.filter = filter
+        self.equalize = equalize
 
     def convert_vars(self):
         columns = []
@@ -347,8 +350,8 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
         indices = []
         print(columns)
         if type == "planets":
+            print("getting planet indices")
             for i in range(len(stardata["kepid"])):
-                print(i)
                 for col in columns:
                     if str(stardata[col].iloc[i]) == 'nan' or stardata["nkoi"].iloc[i] == 0:
                         good = False
@@ -356,15 +359,27 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                     indices.append(i)
                 good = True
         elif type == "noplanets":
+            print("getting noplanet indices")
             for i in range(len(stardata["kepid"])):
-                print(i)
                 for col in columns:
                     if str(stardata[col].iloc[i]) == 'nan' or stardata["nkoi"].iloc[i] != 0:
                         good = False
                 if good:
                     indices.append(i)
                 good = True
-        return indices
+        new_indices = []
+        if self.filter:
+            for i in range(len(indices)):
+                if i % 5 == 0:
+                    new_indices.append(indices[i])
+            return new_indices
+        else:
+            return indices
+
+    """def get_stars_nearby(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        hygdata = pd.read_csv('data/stardata_hyg_v2', sep = ",")"""
+
 
     def get_m_star(self, indices):
         stardata, planetdata, koimaster, compdata = self.start()
@@ -390,8 +405,8 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
     def get_n_planets(self, indices):
         stardata, planetdata, koimaster, compdata = self.start()
         data = []
+        print("getting n_planets")
         for i in indices:
-            print(i)
             data.append(stardata["nkoi"].iloc[i])
         return data
 
@@ -412,8 +427,8 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
     def get_av_extinction(self, indices):
         stardata, planetdata, koimaster, compdata = self.start()
         data = []
+        print("getting av extinction")
         for i in indices:
-            print(i)
             data.append(stardata["av"].iloc[i])
         return data
 
@@ -422,6 +437,14 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
         columns = self.convert_vars()
         planet_indices = self.get_valid_indices(columns, type = "planets")
         noplanet_indices = self.get_valid_indices(columns, type = "noplanets")
+        new_noplanet_indices = []
+        if self.equalize:
+            for i in range(len(noplanet_indices)):
+                if i % 20 == 0:
+                    new_noplanet_indices.append(noplanet_indices[i])
+        else:
+            new_noplanet_indices = noplanet_indices
+
         data = {'status': []}
 
         for i in range(len(planet_indices)):
@@ -445,31 +468,31 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
             else:
                 print("whoops")
 
-        for i in range(len(noplanet_indices)):
+        for i in range(len(new_noplanet_indices)):
             data['status'].append(0)
 
         arr = []
         for col in columns:
             if col == "mass":
-                arr = self.get_m_star(noplanet_indices)
+                arr = self.get_m_star(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "radius":
-                arr = self.get_r_star(noplanet_indices)
+                arr = self.get_r_star(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "dens":
-                arr = self.get_d_star(noplanet_indices)
+                arr = self.get_d_star(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "nkoi":
-                arr = self.get_n_planets(noplanet_indices)
+                arr = self.get_n_planets(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "teff":
-                arr = self.get_eff_temp_star(noplanet_indices)
+                arr = self.get_eff_temp_star(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "feh":
-                arr = self.get_metallicity(noplanet_indices)
+                arr = self.get_metallicity(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "av":
-                arr = self.get_av_extinction(noplanet_indices)
+                arr = self.get_av_extinction(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             else:
                 print("whoops")
@@ -477,12 +500,7 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
         return formatted_data
 
 
-
-
-
-
-
-"""query = QueryAll(["n_planets", "av_extinction"])
+"""query = QueryAll(["n_planets", "av_extinction"], filter = True)
 df = query.getResults()
 print(len(df))"""
 
