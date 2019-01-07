@@ -296,6 +296,8 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                     included variables:
                     ------------------
                     stars_nearby = number of stars within 3 parsecs of target star
+                    ra =  right ascension of target star
+                    dec = declination of target star
                     m_star = mass of star (solar masses)
                     r_star = radius of star (solar radii)
                     d_star = density of star (g/cm^3)
@@ -314,7 +316,11 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
     def convert_vars(self):
         columns = []
         for var in self.vars:
-            if var == "m_star":
+            if var == "ra":
+                columns.append("ra")
+            elif var == "dec":
+                columns.append("dec")
+            elif var == "m_star":
                 columns.append("mass")
             elif var == "r_star":
                 columns.append("radius")
@@ -372,14 +378,29 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
             for i in range(len(indices)):
                 if i % 5 == 0:
                     new_indices.append(indices[i])
+            print("done")
             return new_indices
         else:
+            print("donezo")
             return indices
 
     """def get_stars_nearby(self, indices):
         stardata, planetdata, koimaster, compdata = self.start()
         hygdata = pd.read_csv('data/stardata_hyg_v2', sep = ",")"""
 
+    def get_ra(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(stardata["ra"].iloc[i])
+        return data
+
+    def get_dec(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(stardata["dec"].iloc[i])
+        return data
 
     def get_m_star(self, indices):
         stardata, planetdata, koimaster, compdata = self.start()
@@ -451,7 +472,11 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
             data['status'].append(1)
 
         for col in columns:
-            if col == "mass":
+            if col == "ra":
+                data[col] = self.get_ra(planet_indices)
+            elif col == "dec":
+                data[col] = self.get_dec(planet_indices)
+            elif col == "mass":
                 data[col] = self.get_m_star(planet_indices)
             elif col == "radius":
                 data[col] = self.get_r_star(planet_indices)
@@ -473,7 +498,13 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
 
         arr = []
         for col in columns:
-            if col == "mass":
+            if col == "ra":
+                arr = self.get_ra(new_noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == "dec":
+                arr = self.get_dec(new_noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == "mass":
                 arr = self.get_m_star(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "radius":
@@ -498,6 +529,79 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                 print("whoops")
         formatted_data = pd.DataFrame(data)
         return formatted_data
+
+
+class QueryStar(object): #uses compdata set
+    def __init__(self, star):
+        self.star = star
+
+    def start(self):
+        loadpath1 = 'data/exomultpars.csv'
+        loadpath2 = 'data/stardatamod3.csv'
+        loadpath3 = 'data/cumulative.csv'
+        loadpath4 = 'data/compositepars.csv'
+        planetdata = pd.read_csv(loadpath1, sep=",")
+        stardata = pd.read_csv(loadpath2, sep=",")
+        koimaster = pd.read_csv(loadpath3, sep=",")
+        compdata = pd.read_csv(loadpath4, sep = ",")
+        return planetdata, stardata, koimaster, compdata
+
+    def get_valid_indices(self):
+        good_indices = []
+        planetdata, stardata, koimaster, compdata = self.start()
+        for i in range(len(planetdata["mpl_hostname"])):
+            if self.star.lower() == str(planetdata["mpl_hostname"].iloc[i]).lower() and planetdata['mpl_def'].iloc[i] == 1:
+                good_indices.append(i)
+        return good_indices
+
+    def getResults(self):
+        planetdata, stardata, koimaster, compdata = self.start()
+        good_indices = self.get_valid_indices()
+        data = {'planet name': [],
+                'discovery method': [],
+                'orbital period': [],
+                'effective temperature': [],
+                'a': [],
+                'e': [],
+                'i': [],
+                'planet radius': [],
+                'star radius': []}
+        for i in good_indices:
+            data['planet name'].append(str(planetdata['mpl_hostname'].iloc[i]) +
+                                       str(planetdata['mpl_letter'].iloc[i]))
+            data['discovery method'].append(planetdata['mpl_discmethod'].iloc[i])
+            if str(planetdata['mpl_orbper'].iloc[i]) == 'nan':
+                data['orbital period'].append(100)
+            else:
+                data['orbital period'].append(planetdata['mpl_orbper'].iloc[i])
+            if str(planetdata['mst_teff'].iloc[i]) == 'nan':
+                data['effective temperature'].append(5000)
+            else:
+                data['effective temperature'].append(planetdata['mst_teff'].iloc[i])
+            data['a'].append(planetdata['mpl_orbsmax'].iloc[i])
+            if str(planetdata['mpl_orbeccen'].iloc[i]) == 'nan':
+                data['e'].append(0)
+            else:
+                data['e'].append(planetdata['mpl_orbeccen'].iloc[i])
+            if str(planetdata['mpl_orbincl'].iloc[i]) == 'nan':
+                data['i'].append(0)
+            else:
+                data['i'].append(planetdata['mpl_orbincl'].iloc[i])
+            if str(planetdata['mpl_radj'].iloc[i]) == 'nan':
+                data['planet radius'].append(planetdata['mpl_orbsmax'].iloc[i]/10)
+            else:
+                data['planet radius'].append(planetdata['mpl_radj'].iloc[i])
+            if str(planetdata['mst_rad'].iloc[i]) == 'nan':
+                data['star radius'].append(planetdata['mpl_orbsmax'].iloc[i]/5)
+            else:
+                data['star radius'].append(planetdata['mst_rad'].iloc[i])
+        print(data)
+        formatted_data = pd.DataFrame(data)
+        return formatted_data
+
+
+
+
 
 
 """query = QueryAll(["n_planets", "av_extinction"], filter = True)
