@@ -30,7 +30,7 @@ class Part1_Univariate_Analysis(object):
         plt.show()
 
 
-query = QueryCandidates(["semi-major axis"])
+query = QueryAll(["distance"])
 coordinates = query.getResults()
-histograms = Part1_Univariate_Analysis([coordinates[i][0] for i in range(len(coordinates))])
-histograms.make_histogram(bins =60, xlabel = "Semi-Major Axis", units= "AU")
+histograms = Part1_Univariate_Analysis([np.log(i) for i in coordinates['dist']])
+histograms.make_histogram(bins =30, xlabel = "Av Extinction", units= "mag")

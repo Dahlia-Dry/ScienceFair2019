@@ -298,6 +298,7 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                     stars_nearby = number of stars within 3 parsecs of target star
                     ra =  right ascension of target star
                     dec = declination of target star
+                    distance = distance of star from earth
                     m_star = mass of star (solar masses)
                     r_star = radius of star (solar radii)
                     d_star = density of star (g/cm^3)
@@ -320,6 +321,8 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                 columns.append("ra")
             elif var == "dec":
                 columns.append("dec")
+            elif var == 'distance':
+                columns.append("dist")
             elif var == "m_star":
                 columns.append("mass")
             elif var == "r_star":
@@ -348,6 +351,7 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
         stardata = pd.read_csv(loadpath2, sep=",")
         koimaster = pd.read_csv(loadpath3, sep=",")
         compdata = pd.read_csv(loadpath4, sep = ",")
+
         return stardata, planetdata, koimaster, compdata
 
     def get_valid_indices(self, columns, type): #for given vars, find distinct columns with complete data
@@ -400,6 +404,13 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
         data = []
         for i in indices:
             data.append(stardata["dec"].iloc[i])
+        return data
+
+    def get_dist(self, indices):
+        stardata, planetdata, koimaster, compdata = self.start()
+        data = []
+        for i in indices:
+            data.append(stardata['dist'].iloc[i])
         return data
 
     def get_m_star(self, indices):
@@ -461,7 +472,7 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
         new_noplanet_indices = []
         if self.equalize:
             for i in range(len(noplanet_indices)):
-                if i % 20 == 0:
+                if i <= len(planet_indices):
                     new_noplanet_indices.append(noplanet_indices[i])
         else:
             new_noplanet_indices = noplanet_indices
@@ -476,6 +487,8 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                 data[col] = self.get_ra(planet_indices)
             elif col == "dec":
                 data[col] = self.get_dec(planet_indices)
+            elif col == 'dist':
+                data[col] = self.get_dist(planet_indices)
             elif col == "mass":
                 data[col] = self.get_m_star(planet_indices)
             elif col == "radius":
@@ -503,6 +516,9 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "dec":
                 arr = self.get_dec(new_noplanet_indices)
+                [data[col].append(arr[i]) for i in range(len(arr))]
+            elif col == 'dist':
+                arr = self.get_dist(new_noplanet_indices)
                 [data[col].append(arr[i]) for i in range(len(arr))]
             elif col == "mass":
                 arr = self.get_m_star(new_noplanet_indices)

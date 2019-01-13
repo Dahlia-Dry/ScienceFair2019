@@ -19,6 +19,8 @@ class SVM(object):
                 columns.append("mass")
             elif var == "r_star":
                 columns.append("radius")
+            elif var == 'distance':
+                columns.append("dist")
             elif var == "d_star":
                 columns.append("dens")
             elif var == "n_planets":
@@ -59,14 +61,14 @@ class SVM(object):
 
     def create(self): #synthesize it
         data= self.make_query()
-        x,y = self.format_data(data, shuffle = True)
+        x,y = self.format_data(data, shuffle = False)
         print(x,y)
-        model = svm.SVC(gamma =0.001, C = 1.0)
+        model = svm.SVC()
         model.fit(x,y)
-        print(model.score(x,y))
+        print('score:',model.score(x,y))
 
         print(model.predict([[.315,-.08],[.289,.07], [.428,.16], [.388,.16]]))
-        plt.scatter(x[:,0], x[:,1], x[:,2], c= y, s=1, cmap = plt.cm.Paired)
+        plt.scatter(x[:,0], x[:,1], c= y, s=1, cmap = plt.cm.Paired)
         plt.show()
         """ax = plt.gca()
         xlim = ax.get_xlim()
@@ -97,6 +99,6 @@ class SVM(object):
         plt.title('SVC with Linear kernel')
         plt.show()"""
 
-e = SVM(['av_extinction', 'eff_temp_star'])
+e = SVM(['d_star', 'eff_temp_star'])
 e.create()
 

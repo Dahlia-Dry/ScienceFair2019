@@ -4,21 +4,23 @@ from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
 import matplotlib.pyplot as plt
 import numpy as np
 
-query = QueryAll(['av_extinction', 'ra', 'dec'], filter = True, equalize = True)
+query = QueryAll(['av_extinction', 'ra', 'dec'], filter = False, equalize = False)
 df = query.getResults()
-x = np.array(df['ra'])
+ramin = np.array(df['ra']).min()
+ramax = np.array(df['ra']).max()
+decmin = np.array(df['dec']).min()
+decmax = np.array(df['dec']).max()
 y = np.array(df['dec'])
-z = 0
-u= 0
-v = 0
-w = np.array(df['av'])
+z = np.array(df['av'])
 
-fig = plt.figure()
+print(ramin, ramax)
+print(decmin, decmax)
+"""fig = plt.figure()
 ax = fig.gca(projection='3d')
 
 # Make the grid
-x, y, z = np.meshgrid(x,y,z)
+#x, y, z = np.meshgrid(x,y,z)
 
-ax.quiver(x, y, z, u, v, w, length=0.1, normalize=True)
+ax.scatter(x,y,z)
 
-plt.show()
+plt.show()"""
