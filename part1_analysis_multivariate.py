@@ -18,7 +18,7 @@ ax = fig.add_subplot(111, projection='3d')
        
        """
 
-vars = ['m_planet', 'r_planet','d_planet']
+vars = ['m_star', 'age','luminosity']
 query = QueryCandidates(vars)
 db = query.getResults()
 x = [db[i][0] for i in range(len(db))]
@@ -49,8 +49,8 @@ for i in range(len(x)):
 new_x = np.array(new_x)
 new_y = np.array(new_y)
 new_z = np.array(new_z)
-ax.set_xlabel("Planet Mass (jupiter masses)")
-ax.set_ylabel("Planet Radius (jupiter radii)")
-ax.set_zlabel("Planet Density (g/cm^3)")
+ax.set_xlabel("Stellar Mass (solar masses)")
+ax.set_ylabel("Stellar Age (Gyr)")
+ax.set_zlabel("Stellar Luminosity (log(solar luminosity))")
 ax.plot_trisurf(new_x,new_y,new_z, cmap = 'viridis')
 plt.show()

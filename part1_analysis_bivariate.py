@@ -79,7 +79,7 @@ class Part1_Bivariate_Analysis(object):
         plt.show()
 
 
-query = QueryCandidates(["r_star", "metallicity"])
+query = QueryCandidates(["d_planet", "r_star"])
 coordinates = query.getResults()
 scatterplot = Part1_Bivariate_Analysis(coordinates)
-scatterplot.gaussian_kde("Stellar Radius", "solar radii", "Metallicity", "[Fe/H]")
+scatterplot.gaussian_kde("Planet Density", "jupiter radii", "Stellar Radius", "solar radii")
