@@ -50,7 +50,7 @@ def scatter(df, vars, xvar, yvar, xlabel, ylabel): #df is a dataframe obtained f
     plt.title(yvar + " vs " + xvar)
     plt.show()
 
-vars = ['d_star', 'eff_temp_star']
-query = QueryAll(vars, filter = False, equalize = True)
+vars = ['av_extinction', 'distance']
+query = QueryAll(vars, filter = True, equalize = True)
 df = query.getResults()
 scatter(df, vars, xvar = "Stellar Av Extinction", yvar = "Distance", xlabel = "(mag)", ylabel = "(pc)")
