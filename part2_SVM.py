@@ -4,6 +4,7 @@ from query import *
 from sklearn import svm as svm
 import matplotlib.pyplot as plt
 from matplotlib import style
+from matplotlib.colors import ListedColormap
 style.use('ggplot')
 
 
@@ -61,44 +62,47 @@ class SVM(object):
 
     def create(self): #synthesize it
         data= self.make_query()
-        x,y = self.format_data(data, shuffle = False)
-        print(x,y)
+        X,y = self.format_data(data, shuffle = False)
+        #print(x,y)
         model = svm.SVC()
-        model.fit(x,y)
-        print('score:',model.score(x,y))
+        model.fit(X,y)
+        print('score:',model.score(X,y))
 
-        print(model.predict([[.315,-.08],[.289,.07], [.428,.16], [.388,.16]]))
-        plt.scatter(x[:,0], x[:,1], c= y, s=1, cmap = plt.cm.Paired)
-        plt.show()
-        """ax = plt.gca()
-        xlim = ax.get_xlim()
-        ylim = ax.get_ylim()
-        xx = np.linspace(xlim[0], xlim[1], 30)
-        yy = np.linspace(ylim[0], ylim[1], 30)
-        YY,XX = np.meshgrid(yy,xx)
-        xy = np.vstack([XX.ravel(), YY.ravel()]).T
-        Z = model.decision_function(xy).reshape(XX.shape)
-        ax.contour(XX,YY,Z,colors= 'k', levels = [-1,0,1], alpha = 0.5,
-                   linestyles = ['--', '-', '--'])
-        ax.scatter(model.support_vectors_[:,0], model.support_vectors_[:,1], s = 2,
-                   linewidth = 1, facecolors = 'none', edgecolors = 'k')
-        plt.show()
-        x_min, x_max = x[:, 0].min() - 1, x[:, 0].max() + 1
-        y_min, y_max = x[:, 1].min() - 1, x[:, 1].max() + 1
-        h = 0.2
-        xprime, yprime = np.meshgrid(np.arange(x_min, x_max, h),
+        #print(model.predict([[3891,4.759,424.89,0.217]]))
+        #plt.scatter(x[:,0], x[:,1], c= y, s=1, cmap = plt.cm.Paired)
+        #plt.show()
+        """h = 0.2
+        x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5
+        y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5
+        xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
                              np.arange(y_min, y_max, h))
-        plt.subplot(1, 1, 1)
-        Z = model.predict(np.c_[xprime.ravel(), yprime.ravel()])
-        Z = Z.reshape(xprime.shape)
-        plt.contourf(xprime, yprime, Z, cmap=plt.cm.Paired, alpha=0.8)
-        plt.scatter(x[:, 0], x[:, 1], c=y, cmap=plt.cm.Paired)
-        plt.xlabel('AV Extinction')
-        plt.ylabel('Metallicity')
-        plt.xlim(xprime.min(), xprime.max())
-        plt.title('SVC with Linear kernel')
+
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        cm = plt.cm.RdBu
+        cm_bright = ListedColormap(['#FF0000', '#0000FF'])
+        ax.scatter(X[:, 0], X[:, 1], c=y, cmap=cm_bright,
+                   edgecolors='k')
+        ax.set_xlim(xx.min(), xx.max())
+        ax.set_ylim(yy.min(), yy.max())
+        ax.set_xticks(())
+        ax.set_yticks(())
+        Z = model.decision_function(np.c_[xx.ravel(), yy.ravel()])
+        Z = Z.reshape(xx.shape)
+        ax.contourf(xx, yy, Z, cmap=cm, alpha=.8)
+        ax.scatter(X[:, 0], X[:, 1], c=y, cmap=cm_bright,
+                   edgecolors='k')
+        ax.set_xlim(xx.min(), xx.max())
+        ax.set_ylim(yy.min(), yy.max())
+        ax.set_xticks(())
+        ax.set_yticks(())
+        ax.set_xlabel("Stellar Density (g/cm^3)")
+        ax.set_ylabel("Stellar Effective Temperature (K)")
+        plt.tight_layout()
         plt.show()"""
 
-e = SVM(['d_star', 'eff_temp_star'])
+
+#e = SVM(['eff_temp_star','d_star','distance', 'av_extinction'])
+e = SVM(['distance', 'av_extinction', 'eff_temp_star'])
 e.create()
 

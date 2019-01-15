@@ -18,12 +18,16 @@ ax = fig.add_subplot(111, projection='3d')
        
        """
 
-vars = ['m_star', 'age','luminosity']
-query = QueryCandidates(vars)
+vars = ['av_extinction', 'distance','d_star']
+query = QueryAll(vars, filter = True, equalize=  True)
 db = query.getResults()
-x = [db[i][0] for i in range(len(db))]
+status = db['status']
+x = db['av']
+y = db['dist']
+z = db['dens']
+"""x = [db[i][0] for i in range(len(db))]
 y = [db[i][1] for i in range(len(db))]
-z = [db[i][2] for i in range(len(db))]
+z = [db[i][2] for i in range(len(db))]"""
 """for i in range(len(db['mass'])):
     if db['status'].iloc[i] == 1:
         x.append(db['mass'].iloc[i])
@@ -35,6 +39,7 @@ z = np.array(z)
 new_x = []
 new_y = []
 new_z = []
+new_status = []
 x1 = np.percentile(x, 10)
 x3 = np.percentile(x, 90)
 y1 = np.percentile(y, 10)
@@ -46,11 +51,13 @@ for i in range(len(x)):
         new_x.append(x[i])
         new_y.append(y[i])
         new_z.append(z[i])
+        new_status.append(status[i])
 new_x = np.array(new_x)
 new_y = np.array(new_y)
 new_z = np.array(new_z)
-ax.set_xlabel("Stellar Mass (solar masses)")
-ax.set_ylabel("Stellar Age (Gyr)")
-ax.set_zlabel("Stellar Luminosity (log(solar luminosity))")
-ax.plot_trisurf(new_x,new_y,new_z, cmap = 'viridis')
+ax.set_xlabel("Av Extinction (mag)")
+ax.set_ylabel("Distance (pc)")
+ax.set_zlabel("Stellar Effective Temperature (K)")
+ax.scatter(new_x,new_y,new_z, c = new_status, cmap=plt.cm.Paired)
+#ax.plot_trisurf(new_x,new_y,new_z, cmap = 'viridis')
 plt.show()

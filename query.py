@@ -378,10 +378,16 @@ class QueryAll(object): #return dataframe of string planet/noplanet , stellar ch
                     indices.append(i)
                 good = True
         new_indices = []
+        done = False
+        j = 30
         if self.filter:
             for i in range(len(indices)):
-                if i % 5 == 0:
+                if i % 4!= 0:
                     new_indices.append(indices[i])
+                if done == False and stardata['nconfp'].iloc[indices[4*j]] != 0:
+                    print(stardata.iloc[indices[4*j]])
+                    done = True
+                j = j + 1
             print("done")
             return new_indices
         else:
