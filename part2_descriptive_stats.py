@@ -1,3 +1,8 @@
+""" Author Dahlia Dry
+    Last Modified 1/9/2019
+    A place to create comparative scatterplots for exoplanet-hosting and
+    non-exoplanet-hosting stars
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd

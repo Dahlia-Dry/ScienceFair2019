@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36039cdb-4534-4e5e-9622-98d8183f5973" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentation_2019.ipynb" afterPath="$PROJECT_DIR$/Presentation_2019.ipynb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/part1_analysis_montecarlo.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/part2_weighted_SVM_prediction.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filter_datasets.py" afterPath="$PROJECT_DIR$/filter_datasets.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/part1_analysis_bivariate.py" afterPath="$PROJECT_DIR$/part1_analysis_bivariate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/part1_analysis_multivariate.py" afterPath="$PROJECT_DIR$/part1_analysis_multivariate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/part1_analysis_univariate.py" afterPath="$PROJECT_DIR$/part1_analysis_univariate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/part2_SVM.py" afterPath="$PROJECT_DIR$/part2_SVM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/part2_descriptive_stats.py" afterPath="$PROJECT_DIR$/part2_descriptive_stats.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/part2_investigate.py" afterPath="$PROJECT_DIR$/part2_investigate.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,63 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="query.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/query.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="114" column="28" lean-forward="false" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <marker date="1547582546556" expanded="true" signature="10934:21376" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="13925:15412" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="14969:15343" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="15173:15260" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="15357:15412" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="15418:15590" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1547582546556" expanded="true" signature="15622:15799" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="15832:16010" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="16044:16223" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="16259:16438" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="16474:16655" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="16691:16870" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="16909:17123" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="17166:17345" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="17386:17564" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="17607:17823" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="17850:21376" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="18159:18324" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="18210:18324" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="18533:19510" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="19645:21302" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="19673:19797" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="19828:19953" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="19985:20111" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="20143:20271" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="20305:20433" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="20465:20593" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="20625:20756" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="20788:20923" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="20954:21087" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="21117:21252" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="21403:24467" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="21452:21477" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="21499:21939" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="21973:22312" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="22121:22284" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="22339:24467" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="22469:22756" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="22788:24373" ph="..." />
-                <marker date="1547582546556" expanded="true" signature="24474:24582" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="orbit_visualization.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/orbit_visualization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="-1124">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -80,8 +37,20 @@
       <file leaf-file-name="part2_SVM.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part2_SVM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1174">
-              <caret line="97" column="25" lean-forward="false" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+            <state relative-caret-position="370">
+              <caret line="107" column="21" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="107" selection-end-column="21" />
+              <folding>
+                <element signature="e#132#150#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="part3_SVMbig.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/part3_SVMbig.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -92,22 +61,22 @@
       <file leaf-file-name="part2_investigate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part2_investigate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="342">
+              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#113#132#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="part1_analysis_bivariate.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/part1_analysis_bivariate.py">
+      <file leaf-file-name="ELCA.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ELCA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1180">
-              <caret line="81" column="47" lean-forward="false" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+            <state relative-caret-position="18">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#257#270#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,51 +85,56 @@
       <file leaf-file-name="part2_descriptive_stats.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part2_descriptive_stats.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+            <state relative-caret-position="-602">
+              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#158#176#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="part1_analysis_multivariate.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/part1_analysis_multivariate.py">
+      <file leaf-file-name="DataGenerator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
+            <state relative-caret-position="288">
+              <caret line="127" column="41" lean-forward="true" selection-start-line="127" selection-start-column="41" selection-end-line="127" selection-end-column="41" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#221#251#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Presentation_2019.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Presentation_2019.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
+      <file leaf-file-name="example_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3132">
+              <caret line="174" column="69" lean-forward="true" selection-start-line="174" selection-start-column="69" selection-end-line="174" selection-end-column="69" />
+              <folding>
+                <element signature="e#200#213#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="filter_datasets.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/filter_datasets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="54">
+              <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+              <folding>
+                <element signature="e#131#149#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="part1_analysis_univariate.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/part1_analysis_univariate.py">
+      <file leaf-file-name="neuralnet3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralnet3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="-5102">
+              <caret line="4" column="46" lean-forward="false" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -177,21 +151,26 @@
         <option value="$PROJECT_DIR$/orbital_elements.py" />
         <option value="$PROJECT_DIR$/part1_analysis_montecarlo.py" />
         <option value="$PROJECT_DIR$/part1_analysis.py" />
-        <option value="$PROJECT_DIR$/filter_datasets.py" />
         <option value="$PROJECT_DIR$/orbit_visualization.py" />
-        <option value="$PROJECT_DIR$/part2_investigate.py" />
+        <option value="$PROJECT_DIR$/query.py" />
         <option value="$PROJECT_DIR$/part1_analysis_univariate.py" />
         <option value="$PROJECT_DIR$/part1_analysis_bivariate.py" />
         <option value="$PROJECT_DIR$/part1_analysis_multivariate.py" />
-        <option value="$PROJECT_DIR$/part2_SVM.py" />
         <option value="$PROJECT_DIR$/part2_descriptive_stats.py" />
-        <option value="$PROJECT_DIR$/query.py" />
+        <option value="$PROJECT_DIR$/part2_investigate.py" />
+        <option value="$PROJECT_DIR$/neuralnet3.py" />
+        <option value="$PROJECT_DIR$/DataGenerator.py" />
+        <option value="$PROJECT_DIR$/ELCA.py" />
+        <option value="$PROJECT_DIR$/example_data.py" />
+        <option value="$PROJECT_DIR$/filter_datasets.py" />
+        <option value="$PROJECT_DIR$/part2_SVM.py" />
+        <option value="$PROJECT_DIR$/part3_SVMbig.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="710" />
-    <option name="y" value="191" />
+    <option name="x" value="324" />
+    <option name="y" value="93" />
     <option name="width" value="1675" />
     <option name="height" value="948" />
   </component>
@@ -211,6 +190,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -223,7 +203,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -255,37 +234,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="710" y="191" width="1675" height="948" extended-state="0" />
+    <frame x="324" y="93" width="1675" height="948" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2811541" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2922038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24956217" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25030527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25030527" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25030527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2811541" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24956217" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -295,10 +264,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23705408" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20566037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25030527" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2922038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24956217" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -316,58 +285,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/part1_analysis_bivariate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part1_analysis_multivariate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/filter_datasets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="79" column="42" lean-forward="true" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orbital_elements.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part1_analysis.py" />
-    <entry file="file://$PROJECT_DIR$/part1_analysis_montecarlo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part1_analysis_multivariate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/filter_datasets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -380,7 +297,7 @@
         <state relative-caret-position="324">
           <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#182#200#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -413,7 +330,7 @@
         <state relative-caret-position="330">
           <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#182#200#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -423,7 +340,7 @@
         <state relative-caret-position="180">
           <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#175#193#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -441,46 +358,6 @@
           <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1547582546556" expanded="true" signature="10934:21376" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="13925:15412" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="14969:15343" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15173:15260" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15357:15412" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15418:15590" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1547582546556" expanded="true" signature="15622:15799" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15832:16010" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16044:16223" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16259:16438" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16474:16655" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16691:16870" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16909:17123" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17166:17345" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17386:17564" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17607:17823" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17850:21376" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18159:18324" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18210:18324" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18533:19510" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19645:21302" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19673:19797" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19828:19953" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19985:20111" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20143:20271" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20305:20433" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20465:20593" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20625:20756" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20788:20923" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20954:21087" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21117:21252" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21403:24467" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21452:21477" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21499:21939" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21973:22312" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22121:22284" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22339:24467" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22469:22756" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22788:24373" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="24474:24582" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
@@ -511,7 +388,7 @@
         <state relative-caret-position="324">
           <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#182#200#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -521,7 +398,7 @@
         <state relative-caret-position="144">
           <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#175#193#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -532,46 +409,6 @@
           <caret line="75" column="41" lean-forward="false" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="43" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1547582546556" expanded="true" signature="10934:21376" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="13925:15412" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="14969:15343" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15173:15260" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15357:15412" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15418:15590" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1547582546556" expanded="true" signature="15622:15799" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15832:16010" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16044:16223" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16259:16438" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16474:16655" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16691:16870" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16909:17123" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17166:17345" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17386:17564" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17607:17823" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17850:21376" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18159:18324" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18210:18324" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18533:19510" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19645:21302" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19673:19797" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19828:19953" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19985:20111" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20143:20271" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20305:20433" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20465:20593" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20625:20756" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20788:20923" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20954:21087" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21117:21252" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21403:24467" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21452:21477" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21499:21939" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21973:22312" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22121:22284" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22339:24467" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22469:22756" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22788:24373" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="24474:24582" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
@@ -603,7 +440,7 @@
         <state relative-caret-position="324">
           <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#182#200#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -613,7 +450,7 @@
         <state relative-caret-position="144">
           <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#175#193#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -645,7 +482,7 @@
         <state relative-caret-position="144">
           <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#175#193#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -662,7 +499,7 @@
         <state relative-caret-position="324">
           <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#182#200#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -682,13 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/filter_datasets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4032">
-          <caret line="228" column="27" lean-forward="false" selection-start-line="228" selection-start-column="27" selection-end-line="228" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/orbital_elements.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -704,118 +534,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/part1_analysis_univariate.py">
+    <entry file="file://$PROJECT_DIR$/Presentation_2019.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part2_weighted_SVM_prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/orbit_visualization.py">
+    <entry file="file://$PROJECT_DIR$/part1_analysis_univariate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="3" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part1_analysis_bivariate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1180">
-          <caret line="81" column="47" lean-forward="false" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part1_analysis_multivariate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part2_SVM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1174">
-          <caret line="97" column="25" lean-forward="false" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part2_investigate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#111#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="114" column="28" lean-forward="false" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="28" />
+        <state relative-caret-position="162">
+          <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="341" selection-end-column="22" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1547582546556" expanded="true" signature="10934:21376" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="13925:15412" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="14969:15343" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15173:15260" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15357:15412" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15418:15590" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1547582546556" expanded="true" signature="15622:15799" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="15832:16010" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16044:16223" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16259:16438" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16474:16655" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16691:16870" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="16909:17123" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17166:17345" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17386:17564" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17607:17823" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="17850:21376" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18159:18324" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18210:18324" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="18533:19510" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19645:21302" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19673:19797" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19828:19953" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="19985:20111" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20143:20271" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20305:20433" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20465:20593" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20625:20756" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20788:20923" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="20954:21087" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21117:21252" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21403:24467" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21452:21477" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21499:21939" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="21973:22312" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22121:22284" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22339:24467" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22469:22756" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="22788:24373" ph="..." />
-            <marker date="1547582546556" expanded="true" signature="24474:24582" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part1_analysis_bivariate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
+          <folding>
+            <element signature="e#182#200#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part1_analysis_multivariate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-584">
+          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+          <folding>
+            <element signature="e#175#193#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/part2_descriptive_stats.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-602">
+          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding>
+            <element signature="e#158#176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part2_investigate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#113#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralnet3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5102">
+          <caret line="4" column="46" lean-forward="false" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ELCA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding>
+            <element signature="e#257#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3132">
+          <caret line="174" column="69" lean-forward="true" selection-start-line="174" selection-start-column="69" selection-end-line="174" selection-end-column="69" />
+          <folding>
+            <element signature="e#200#213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filter_datasets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+          <folding>
+            <element signature="e#131#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/orbit_visualization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1124">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part2_SVM.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
-          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <caret line="107" column="21" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="107" selection-end-column="21" />
+          <folding>
+            <element signature="e#132#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataGenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="127" column="41" lean-forward="true" selection-start-line="127" selection-start-column="41" selection-end-line="127" selection-end-column="41" />
+          <folding>
+            <element signature="e#221#251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part3_SVMbig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

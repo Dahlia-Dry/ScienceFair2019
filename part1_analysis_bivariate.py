@@ -1,3 +1,8 @@
+""" Author Dahlia Dry
+    Last Modified 1/9/2019
+    Performs bivariate analysis of Kepler data through scatterplots,
+    regression analysis, gaussian kernel density estimation
+"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -12,16 +17,51 @@ class Part1_Bivariate_Analysis(object):
        Operations: optimized fit regression, scatterplots,
        Parameters
        ----------
-       xvar: pandas series of data from one column of star or planet databanks
-       yvar: pandas series of data from one column of star or planet databanks
+       coords: list of (x,y) tuples corresponding to two variables queried from the Kepler database
        """
     def __init__(self, coords):
         self.coords = coords
 
-    def get_correlation_coefficient(self):
-        """Obtain the r and r^2 values for the correlation between the given variables.
-           Optimized by finding the best r value from a variety of fits."""
-        print("wip")
+    def optimized_regression(self):
+        deg = [1,2,3,4,5]
+        resids = []
+        x = [self.coords[i][0] for i in range(len(self.coords))]
+        y = np.array([self.coords[i][1] for i in range(len(self.coords))])
+        yhat = []
+        coefs = []
+        yval = 0
+        power = 0
+        for d in deg:
+            coefs = np.polyfit(x,y,d)
+            for val in x:
+                yval = 0
+                for c in range(len(coefs)):
+                    power = len(coefs) - c
+                    yval += coefs[c] * (val ** power)
+                yhat.append(yval)
+            yhat = np.array(yhat)
+            resids.append([y[i] - yhat[i] for i in range(len(y))])
+            yhat = []
+        sums = []
+        for r in resids:
+            sum = 0
+            for val in resids[r]:
+                sum += math.abs(val)
+            sums.append(sum)
+        minsum = 1000000
+        index = 0
+        for s in range(len(sums)):
+            if sums[s] < minsum:
+                index = s
+
+        return np.polyfit(x,y,deg[index]) #returns coefficients of optimized regression line
+
+
+    def get_rvals(self):
+        x = [self.coords[i][0] for i in range(len(self.coords))]
+        y = [self.coords[i][1] for i in range(len(self.coords))]
+        r = np.corrcoef(x,y)
+        return r, r**2
 
     def scatterplot(self, xlabel, xunits, ylabel, yunits):
         x = [self.coords[i][0] for i in range(len(self.coords))]
@@ -79,7 +119,11 @@ class Part1_Bivariate_Analysis(object):
         plt.show()
 
 
-query = QueryCandidates(["d_planet", "r_star"])
-coordinates = query.getResults()
-scatterplot = Part1_Bivariate_Analysis(coordinates)
-scatterplot.gaussian_kde("Planet Density", "jupiter radii", "Stellar Radius", "solar radii")
+
+def main():
+    query = QueryCandidates(["d_planet", "r_star"])
+    coordinates = query.getResults()
+    scatterplot = Part1_Bivariate_Analysis(coordinates)
+    scatterplot.gaussian_kde("Planet Density", "jupiter radii", "Stellar Radius", "solar radii")
+
+main()

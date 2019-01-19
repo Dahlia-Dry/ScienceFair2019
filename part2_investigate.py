@@ -1,3 +1,7 @@
+""" Author Dahlia Dry
+    Last Modified 1/9/2019
+    A dumping ground for hunches and testing of random bits
+"""
 from query import *
 from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
 
@@ -15,12 +19,12 @@ z = np.array(df['av'])
 
 print(ramin, ramax)
 print(decmin, decmax)
-"""fig = plt.figure()
+fig = plt.figure()
 ax = fig.gca(projection='3d')
 
 # Make the grid
-#x, y, z = np.meshgrid(x,y,z)
+x, y, z = np.meshgrid(x,y,z)
 
 ax.scatter(x,y,z)
 
-plt.show()"""
+plt.show()

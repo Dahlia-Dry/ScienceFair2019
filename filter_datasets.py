@@ -1,3 +1,8 @@
+"""
+Author Dahlia Dry
+Last Modified: 11/4/2018
+Initial filtering mechanism for duplicates and null values from Kepler datasets
+"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

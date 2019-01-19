@@ -1,9 +1,10 @@
 """
 Author Dahlia Dry
-Last Modified: 12/21/2018
-Essentially a prototype for the final SVM in part 3.
-A place for experimenting.
+Last Modified 1/9/2019
+This program is the flexible feature space SVM software used for a variety of applications
+in the rest of this project.
 """
+
 import numpy as np
 import pandas as pd
 from query import *
@@ -66,18 +67,37 @@ class SVM(object):
         x = np.array(x)
         return x,y
 
-    def create(self): #synthesize it
+    def optimize_params(self):
+        data = self.make_query()
+        X,y = self.format_data(data, shuffle = False)
+        kernel = ['rbf','poly','sigmoid']
+        best_kern = 'rbf'
+        max_score = 0
+        for kern in kernel:
+            model = svm.SVC(kernel= kern)
+            model.fit(X,y)
+            score = model.score(X,y)
+            if score > max_score:
+                max_score = score
+                best_kern = kern
+        return [best_kern]
+
+
+    def get_probfloat(self, input): #outputs the probability of a given input set with same dimensions as vars having exoplanets
+        data = self.make_query()
+        X,y = self.format_data(data, shuffle = False)
+        params = self.optimize_params()
+        model = svm.SVC(kernel = params[0])
+        model.fit(X,y)
+        return model.predict_proba(input)
+
+    def plot_feature_subset(self):
         data= self.make_query()
         X,y = self.format_data(data, shuffle = False)
-        #print(x,y)
-        model = svm.SVC()
+        params = self.optimize_params()
+        model = svm.SVC(kernel = params[0])
         model.fit(X,y)
-        print('score:',model.score(X,y))
-
-        #print(model.predict([[3891,4.759,424.89,0.217]]))
-        #plt.scatter(x[:,0], x[:,1], c= y, s=1, cmap = plt.cm.Paired)
-        #plt.show()
-        """h = 0.2
+        h = 0.2
         x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5
         y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5
         xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
@@ -105,10 +125,4 @@ class SVM(object):
         ax.set_xlabel("Stellar Density (g/cm^3)")
         ax.set_ylabel("Stellar Effective Temperature (K)")
         plt.tight_layout()
-        plt.show()"""
-
-
-#e = SVM(['eff_temp_star','d_star','distance', 'av_extinction'])
-e = SVM(['distance', 'av_extinction', 'eff_temp_star'])
-e.create()
-
+        plt.show()
